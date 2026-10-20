@@ -1,0 +1,7 @@
+tests/
+dataset/
+
+latex-example-paper/
+*.pdf
+
+README_local.md
