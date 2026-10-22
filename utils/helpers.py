@@ -49,6 +49,20 @@ def load_csv_data(data_path, sub_sample=False):
     return x_train, x_test, y_train, train_ids, test_ids
 
 
+def split_indices(y):
+    """Return a reproducible stratified 80/20 training/validation split."""
+    rng = np.random.default_rng(42)
+    train, validation = [], []
+    for label in np.unique(y):
+        indices = rng.permutation(np.flatnonzero(y == label))
+        split = int(0.8 * len(indices))
+        train.append(indices[:split])
+        validation.append(indices[split:])
+    return rng.permutation(np.concatenate(train)), rng.permutation(
+        np.concatenate(validation)
+    )
+
+
 def create_csv_submission(ids, y_pred, name):
     """
     This function creates a csv file named 'name' in the format required for a submission in Kaggle or AIcrowd.

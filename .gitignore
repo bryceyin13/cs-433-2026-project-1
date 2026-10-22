@@ -5,3 +5,9 @@ latex-example-paper/
 *.pdf
 
 README_local.md
+
+scripts/*
+!scripts/threshold.py
+results/
+__pycache__/
+*.py[cod]
