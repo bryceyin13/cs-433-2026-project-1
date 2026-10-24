@@ -8,6 +8,9 @@ README_local.md
 
 scripts/*
 !scripts/threshold.py
+!scripts/cross_validation.py
 results/
 __pycache__/
 *.py[cod]
+
+report/

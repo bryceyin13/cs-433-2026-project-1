@@ -7,7 +7,7 @@ from utils.helpers import create_csv_submission, load_csv_data, split_indices
 from utils.implementations import _sigmoid, logistic_regression
 from utils.preprocessing import fit_preprocessor, transform_features
 
-THRESHOLD = 0.19370821941760902
+THRESHOLD = 0.1944888408230755
 
 
 def main():

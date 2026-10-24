@@ -15,9 +15,17 @@ python run.py
 ```
 
 This trains logistic regression on an 80% split and saves test predictions to
-`results/submission.csv` using the fixed validation-selected threshold.
+`results/submission.csv` using the fixed OOF-selected threshold.
 
 Select the threshold separately with `python -m scripts.threshold`.
+Run five-fold cross-validation with `python -m scripts.cross_validation`.
+
+Compile the report from its directory:
+
+```bash
+cd report
+latexmk -pdf main.tex
+```
 
 ## Project Structure
 
@@ -25,6 +33,7 @@ Select the threshold separately with `python -m scripts.threshold`.
 .
 ├── run.py
 ├── scripts/
+│   ├── cross_validation.py
 │   └── threshold.py
 ├── utils/
 │   ├── helpers.py
